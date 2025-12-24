@@ -1,0 +1,16 @@
+{
+  "name": "Inject",
+  "uuid": "2236764a-516e-4482-8455-73dc154951a7",
+  "creator": {
+    "version": "3.8.7"
+  },
+  "scripts": {
+    "test": "vitest"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.2.2"
+  },
+  "devDependencies": {
+    "vitest": "^4.0.16"
+  }
+}

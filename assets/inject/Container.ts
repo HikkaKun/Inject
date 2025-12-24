@@ -65,7 +65,7 @@ export class Container implements IDisposable {
     return instance;
   }
 
-  public createClass<T>(constructor: { new(...args: any[]): T }) {
+  public instantiateClass<T>(constructor: { new(...args: any[]): T }) {
     const metadata = getMetadata(constructor.prototype, false);
     if (!metadata) return new constructor();
 

@@ -88,7 +88,7 @@ test('Test basic injection', () => {
     }
   };
 
-  container.register(TestClass, (container) => container.createClass(TestClass));
+  container.register(TestClass, (container) => container.instantiateClass(TestClass));
 
   const instance = container.resolve<TestClass>(TestClass)!;
 

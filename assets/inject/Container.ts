@@ -65,6 +65,14 @@ export class Container implements IDisposable {
     return instance;
   }
 
+  public createClass<T>(constructor: { new(...args: any[]): T }) {
+    const metadata = getMetadata(constructor.prototype, false);
+    if (!metadata) return new constructor();
+
+    const args = metadata.constructor.map(({ type, key, shouldThrowError }) => this.resolve<any>(type, key, shouldThrowError));
+    return new constructor(...args);
+  }
+
   public inject(target: Object) {
     const metadata = getMetadata(target, false);
     if (!metadata) return;
